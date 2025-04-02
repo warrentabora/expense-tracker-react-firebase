@@ -13,7 +13,7 @@ export const ExpenseTracker = () => {
     const transactionActions = useAddTransaction();
     const { addTransaction, deleteTransaction } = transactionActions;
     const { transactions, transactionTotals } = useGetTransaction();
-    const { name, profilePhoto } = useGetUserInfo();
+    const { name, profilePhoto, isAuth } = useGetUserInfo();
     const navigate = useNavigate();
 
     const { balance, income, expense } = transactionTotals;
