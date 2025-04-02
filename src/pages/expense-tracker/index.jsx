@@ -3,7 +3,7 @@ import { signOut } from "firebase/auth";
 import { useAddTransaction } from "../../hooks/useAddTransaction";
 import { useGetTransaction } from "../../hooks/useGetTransactions";
 import { useGetUserInfo } from "../../hooks/useGetUserInfo";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Navigate } from "react-router-dom";
 
 import "./style.css";
 import { auth } from "../../config/firebase-config";
@@ -51,6 +51,11 @@ export const ExpenseTracker = () => {
             console.error(err);
         }
     };
+
+
+    if (!isAuth) {
+        return <Navigate to={'/'} />
+    }
 
 
 
